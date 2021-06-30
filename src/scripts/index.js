@@ -1,6 +1,6 @@
 import Timer from "./Timer";
 
-const MINUTES_DEFAULT = 20;
+const MINUTES_DEFAULT = .25;
 const timeElement = document.getElementById('time');
 timeElement.value = MINUTES_DEFAULT;
 

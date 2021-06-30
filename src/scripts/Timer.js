@@ -9,17 +9,21 @@ export default class Timer {
         this.audio = new Audio('./src/audio/alarm_beep.wav');
         this.audio.loop = false;
 
-        this.timer = setInterval(() => {
+        this.timer = window.setInterval(() => {
             if (this.secondsToGo === 0) {
                 this.isUp = true;
                 this.audio.play();
-                setTimeout(() => this.audio.pause(), 2000)
+                setTimeout(() => {
+                    this.audio.pause();
+                    this.reset();
+                }, 3000)
             }
             if (!this.isPaused && !this.isUp) {
                 this.secondsToGo--;
                 this.inject();
             }
         }, 1000);
+
     }
 
     set(minutes) {
