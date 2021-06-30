@@ -9,8 +9,7 @@ const secondsElement = document.getElementById('secs');
 const timer = new Timer(MINUTES_DEFAULT, minutesElement, secondsElement);
 
 document.body.addEventListener('click', event => {
-    const target = event.target;
-    const id = target.id;
+    const id = event.target.id;
     switch (id) {
         case 'btn-plus':
             timer.set(++timeElement.value);
